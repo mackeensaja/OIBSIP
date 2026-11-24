@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta name="description" content="A simple and accurate temperature converter for Celsius, Fahrenheit and Kelvin.">
+
+    <title>Tempora | Temperature Converter</title>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- Background Decoration -->
+    <div class="background-decoration decoration-one"></div>
+    <div class="background-decoration decoration-two"></div>
+
+
+    <!-- Main Container -->
+    <main class="main-container">
+
+        <!-- Header -->
+        <header class="header">
+
+            <a href="#" class="logo">
+                <span class="logo-icon">
+                    <i class="fa-solid fa-temperature-half"></i>
+                </span>
+
+                Tempora<span class="logo-highlight">.</span>
+            </a>
+
+            <span class="header-label">
+                <i class="fa-solid fa-circle-check"></i>
+                Accurate Conversion
+            </span>
+
+        </header>
+
+
+        <!-- Hero Section -->
+        <section class="hero">
+
+            <div class="hero-badge">
+                <i class="fa-solid fa-wand-magic-sparkles"></i>
+                SMART TEMPERATURE TOOL
+            </div>
+
+            <h1>
+                Temperature
+                <span class="gradient-text">Converter</span>
+            </h1>
+
+            <p class="hero-description">
+                Convert temperatures effortlessly between Celsius,
+                Fahrenheit and Kelvin with accurate results.
+            </p>
+
+        </section>
+
+
+        <!-- Converter Card -->
+        <section class="converter-card">
+
+            <div class="card-heading">
+
+                <div>
+                    <h2>Convert Temperature</h2>
+                    <p>Enter a value and select your temperature unit.</p>
+                </div>
+
+                <div class="heading-icon">
+                    <i class="fa-solid fa-temperature-high"></i>
+                </div>
+
+            </div>
+
+
+            <!-- Input Form -->
+            <div class="converter-form">
+
+                <div class="input-group">
+
+                    <label for="temperatureInput">
+                        Temperature Value
+                    </label>
+
+                    <div class="input-wrapper">
+
+                        <i class="fa-solid fa-thermometer-half input-icon"></i>
+
+                        <input
+                            type="number"
+                            id="temperatureInput"
+                            placeholder="Enter temperature"
+                            step="any"
+                            autocomplete="off"
+                            aria-describedby="errorMessage"
+                        >
+
+                    </div>
+
+                </div>
+
+
+                <div class="input-group">
+
+                    <label for="unitSelect">
+                        Select Input Unit
+                    </label>
+
+                    <div class="select-wrapper">
+
+                        <i class="fa-solid fa-scale-balanced select-icon"></i>
+
+                        <select id="unitSelect">
+
+                            <option value="C">Celsius (°C)</option>
+                            <option value="F">Fahrenheit (°F)</option>
+                            <option value="K">Kelvin (K)</option>
+
+                        </select>
+
+                        <i class="fa-solid fa-chevron-down dropdown-icon"></i>
+
+                    </div>
+
+                </div>
+
+
+                <!-- Error Message -->
+                <p class="error-message" id="errorMessage" role="alert" aria-live="polite">
+                </p>
+
+
+                <!-- Convert Button -->
+                <button type="button" class="convert-btn" id="convertBtn">
+
+                    <span>Convert Temperature</span>
+
+                    <i class="fa-solid fa-arrow-right"></i>
+
+                </button>
+
+
+                <!-- Reset Button -->
+                <button type="button" class="reset-btn" id="resetBtn">
+
+                    <i class="fa-solid fa-rotate-left"></i>
+                    Reset
+
+                </button>
+
+            </div>
+
+
+            <!-- Result Section -->
+            <div class="results-section" id="resultsSection" aria-live="polite">
+
+                <div class="results-heading">
+
+                    <div>
+                        <span class="section-label">CONVERSION RESULTS</span>
+                        <h2>Converted Temperatures</h2>
+                    </div>
+
+                    <span class="result-status">
+                        <i class="fa-solid fa-check-circle"></i>
+                        Successful
+                    </span>
+
+                </div>
+
+
+                <div class="results-grid">
+
+                    <!-- Celsius Result -->
+                    <article class="result-card celsius-card">
+
+                        <div class="result-card-top">
+
+                            <div class="result-icon">
+                                <i class="fa-solid fa-temperature-low"></i>
+                            </div>
+
+                            <span class="unit-symbol">°C</span>
+
+                        </div>
+
+                        <p class="result-unit">Celsius</p>
+
+                        <h3 id="celsiusResult">0.00</h3>
+
+                        <span class="result-description">
+                            Degree Celsius
+                        </span>
+
+                    </article>
+
+
+                    <!-- Fahrenheit Result -->
+                    <article class="result-card fahrenheit-card">
+
+                        <div class="result-card-top">
+
+                            <div class="result-icon">
+                                <i class="fa-solid fa-temperature-high"></i>
+                            </div>
+
+                            <span class="unit-symbol">°F</span>
+
+                        </div>
+
+                        <p class="result-unit">Fahrenheit</p>
+
+                        <h3 id="fahrenheitResult">32.00</h3>
+
+                        <span class="result-description">
+                            Degree Fahrenheit
+                        </span>
+
+                    </article>
+
+
+                    <!-- Kelvin Result -->
+                    <article class="result-card kelvin-card">
+
+                        <div class="result-card-top">
+
+                            <div class="result-icon">
+                                <i class="fa-solid fa-temperature-three-quarters"></i>
+                            </div>
+
+                            <span class="unit-symbol">K</span>
+
+                        </div>
+
+                        <p class="result-unit">Kelvin</p>
+
+                        <h3 id="kelvinResult">273.15</h3>
+
+                        <span class="result-description">
+                            Kelvin Scale
+                        </span>
+
+                    </article>
+
+                </div>
+
+                <p class="result-summary" id="resultSummary">
+                    Your converted temperatures will appear here.
+                </p>
+
+            </div>
+
+        </section>
+
+
+        <!-- Formula Information -->
+        <section class="formula-section">
+
+            <div class="section-heading">
+
+                <span class="section-label">UNDERSTAND THE SCIENCE</span>
+
+                <h2>Temperature Conversion Formulas</h2>
+
+                <p>
+                    Quick reference for the three temperature scales.
+                </p>
+
+            </div>
+
+
+            <div class="formula-grid">
+
+                <article class="formula-card">
+
+                    <div class="formula-icon celsius-formula">
+                        <i class="fa-solid fa-temperature-half"></i>
+                    </div>
+
+                    <h3>Celsius to Fahrenheit</h3>
+
+                    <p class="formula">
+                        (°C × 9/5) + 32
+                    </p>
+
+                </article>
+
+
+                <article class="formula-card">
+
+                    <div class="formula-icon fahrenheit-formula">
+                        <i class="fa-solid fa-temperature-high"></i>
+                    </div>
+
+                    <h3>Fahrenheit to Celsius</h3>
+
+                    <p class="formula">
+                        (°F − 32) × 5/9
+                    </p>
+
+                </article>
+
+
+                <article class="formula-card">
+
+                    <div class="formula-icon kelvin-formula">
+                        <i class="fa-solid fa-temperature-three-quarters"></i>
+                    </div>
+
+                    <h3>Celsius to Kelvin</h3>
+
+                    <p class="formula">
+                        °C + 273.15
+                    </p>
+
+                </article>
+
+            </div>
+
+        </section>
+
+
+        <!-- Information Section -->
+        <section class="info-section">
+
+            <div class="info-icon">
+                <i class="fa-solid fa-circle-info"></i>
+            </div>
+
+            <div class="info-content">
+
+                <h3>Did You Know?</h3>
+
+                <p>
+                    Absolute zero is the lowest possible temperature.
+                    It is equal to 0 Kelvin, −273.15°C or −459.67°F.
+                    Temperatures below this limit are not physically valid.
+                </p>
+
+            </div>
+
+        </section>
+
+
+        <!-- Footer -->
+        <footer class="footer">
+
+            <div class="footer-logo">
+                <i class="fa-solid fa-temperature-half"></i>
+                Tempora<span>.</span>
+            </div>
+
+            <p>
+                © <span id="currentYear"></span>
+                Tempora Temperature Converter.
+                Built with HTML, CSS & JavaScript.
+            </p>
+
+            <a href="#top" class="back-to-top" aria-label="Back to top">
+                <i class="fa-solid fa-arrow-up"></i>
+            </a>
+
+        </footer>
+
+    </main>
+
+
+    <!-- JavaScript -->
+    <script src="script.js"></script>
+
+</body>
+</html>
